@@ -7,7 +7,7 @@ read -p "Enter post title: " title
 slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9 ]//g' | tr ' ' '-')
 
 # Create the post with Hugo
-hugo new "posts/${slug}.md"
+hugo --config hugo.toml new "posts/${slug}.md"
 
 # Optional: Print confirmation and path
 echo "New post created: content/posts/${slug}.md"
